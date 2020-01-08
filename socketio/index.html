@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<head>
+    <title>socket.io Demo</title>
+</head>
+<body>
+    <h1>Hello nodejs!!</h1>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        // socket.io connect server
+        var socket = io.connect('http://localhost:80');
+        socket.on('news', function(data) {
+            console.log(data);
+            socket.emit('my other event', {my: 'data'});
+        });
+    </script>
+</body>
