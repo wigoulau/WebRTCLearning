@@ -5,4 +5,3 @@
 * websocket：websocket通信
 * socketio：socket.io通信
 * getusermedia：浏览器显示摄像头
-* desktop：浏览器显示桌面或窗口

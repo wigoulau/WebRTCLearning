@@ -39,7 +39,7 @@ if (hasUserMedia()) {
 ```
 在浏览器中打开index.html文件，就可以显示camera的画面了。在Chrome、Firefox、Edge中显示正常。另外当有多个camera连接时（可安装虚拟摄像头软件来模拟），Firefox可以选择。其他浏览器默认显示其中的一个。
 上面演示了本地打开摄像头的例子，如果要把代码放到http服务器中的话要怎样做呢？这个很简单，只要把这些文件添加到http server中。但是由于安全的原因，浏览器访问服务器来显示摄像头时，需要https服务器才可以。
-可以直接在工作目录中添加server.js：
+可以直接在工作目录中添加server.js、key.pem、cert.pem，这部分就是与前面讲过的搭建https服务器一样：
 ```js
 var https = require("https");
 var fs = require("fs");
@@ -59,8 +59,11 @@ console.log("https server start: https://127.0.0.1:8081");
 ```
 启动server:
 ```sh
+npm install node-static
 node server.js
 ```
+浏览器访问https://127.0.0.1:8081，就会显示摄像头内容了
+
 扩展：
 * getUserMedia返回的stream中视频流什么格式的？yuv or h264 or vp9?
 * 多个camera连接时，如何选择其中的某一个

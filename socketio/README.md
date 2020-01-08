@@ -7,7 +7,7 @@ var app = require('express')();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
 
-server.listen(80);
+server.listen(8080);
 
 app.get('/', function(req, res) {
     res.sendFile(__dirname + '/index.html');
@@ -21,6 +21,8 @@ io.on('connection', function(socket) {
         console.log(data);
     });
 });
+
+console.log("server start: https://127.0.0.1:8080");
 ```
 * index.html
 ```html
@@ -33,7 +35,7 @@ io.on('connection', function(socket) {
     <script src="/socket.io/socket.io.js"></script>
     <script>
         // socket.io connect server
-        var socket = io.connect('http://localhost:80');
+        var socket = io.connect('http://localhost:8080');
         socket.on('news', function(data) {
             console.log(data);
             socket.emit('my other event', {my: 'data'});
@@ -49,5 +51,8 @@ npm install socket.io
 npm install express
 node server.js
 ```
-打开浏览器，按F12，访问http://127.0.0.1，在调试串口中会输出：
+打开浏览器，按F12，访问http://127.0.0.1:8080，在调试窗口中会输出：
 {hello: "world"}
+
+服务器端会打印：
+{ my: 'data' }

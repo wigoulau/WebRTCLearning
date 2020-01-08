@@ -7,7 +7,7 @@
     <script src="/socket.io/socket.io.js"></script>
     <script>
         // socket.io connect server
-        var socket = io.connect('http://localhost:80');
+        var socket = io.connect('http://localhost:8080');
         socket.on('news', function(data) {
             console.log(data);
             socket.emit('my other event', {my: 'data'});
