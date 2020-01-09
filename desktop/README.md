@@ -117,7 +117,7 @@ window.postMessage({
 ```
 * 安装插件
 打开Chrome浏览器，输入 chrome://extensions ，进入扩展程序页面，选择“**开发者模式**”，选择“**加载已解压的扩展程序**”，选择目录ChromePlugDesktopCapture，进行安装，安装完成后如下图：
-![image1.png](./assets/image1.png)
+![image1.png](./assets/Image1.png)
 
 ## 采集程序
 工程包含3个部分：https Server、index.html、client.js
@@ -241,7 +241,7 @@ npm install node-static
 node servers.js
 ```
 打开chrome浏览器，访问：https://127.0.0.1:8082，弹出选择需要共享的屏幕内容：多屏幕、浏览器的某个内容，选择好后，点击“**分享**”，这样就可以显示桌面，如果进一步开发，与其他浏览器或设备共享，需添加RTCPeerConnection等，与摄像头处理相同。
-![image2.png](./assets/image2.png)
+![image2.png](./assets/Image2.png)
 
 ## 参考
 [入门chrome插件开发教程和经验总结](https://www.cnblogs.com/rubekid/p/11769395.html)
