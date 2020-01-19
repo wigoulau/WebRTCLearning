@@ -7,3 +7,4 @@
 * getusermedia：浏览器显示摄像头
 * desktop：浏览器显示桌面或窗口
 * peerConnection：浏览器中显示2个Video，演示RTCPeerConnection通信过程
+* shareCamera: 2台设备共享摄像头视频
